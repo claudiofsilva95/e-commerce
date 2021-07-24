@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     # Meus Apps
     'pages.apps.PagesConfig',
     'users.apps.UsersConfig',
+    'products.apps.ProductsConfig',
 ]
 
 MIDDLEWARE = [

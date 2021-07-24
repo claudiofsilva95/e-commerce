@@ -13,26 +13,17 @@
     <title>{{ title }}</title>
   </head>
   <body>
+    {% if request.user.is_authenticated %}
+    <div class='row text-center'>
+        <div class='col'>
+            <h1>Premium</h1>
+            <p>Bem vindo, {{ user.first_name }} {{ user.last_name }} </p>
+        </div>
+    </div>
+    {% endif %}
     <div class='text-center'>
       <h1>{{ title }}</h1>
-      <p>{{ content }}</p>
   </div>
-  <div class='container'>
-    <div class='row'>
-      <div class='col'>
-        <img src="{% static 'img/eCommerce.jpeg' %}" class='img-fluid' />
-        <p>{{ content }}</p> 
-    </div>
-  </div>
-  {% if request.user.is_authenticated %}
-  <div class='row'>
-      <div class='col'>
-          <h1>Premium</h1>
-          <p>Bem vindo, {{ user.first_name }} {{ user.last_name }} </p>
-      </div>
-  </div>
-  {% endif %}
-
 
     {% block content %}
     
