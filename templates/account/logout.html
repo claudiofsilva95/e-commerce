@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %} <link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock style %}
+{% block title %} Logout {% endblock %}
+
+
+{% block h1 %} <p>Certeza que deseja fazer logout ?</p> {% endblock %}
+
+{% block content %}
+    <form class="form" method="POST">
+        {% csrf_token %}
+        <div class="div-form">
+            {{ form }}
+            <div class="div-btn">
+                <button type="submit">Logout</button>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

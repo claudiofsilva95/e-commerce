@@ -1,0 +1,81 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #ccc;
+}
+
+h1, p {
+    text-align: center;
+}
+a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: blue;
+}
+a:hover {
+    color: red;
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 100px 20% 10px;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 600px;
+    align-items: flex-start;
+}
+
+.div-form {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    
+}
+
+.div-form label {
+    margin-top: 1rem;
+    margin-bottom: .2rem;
+}
+
+.div-form input {
+    padding: .7rem;
+    border-radius: 5px;
+}
+
+.div-form button {
+    margin-top: 2rem;
+    height: 2.5rem;
+    width: 50%;
+    border-radius: 10px;
+}
+.div-form button:hover {
+    cursor: pointer;
+}
+
+.div-form button:active {
+    cursor: initial;
+}
+
+.div-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.errorlist {
+    color: red;
+    font-size: 1rem;
+    list-style: none;
+}
+
+@media (max-width:750px) {
+    .div-form {
+        width: 90%;
+    }
+}
