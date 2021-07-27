@@ -13,6 +13,17 @@
     <title>{{ title }}</title>
   </head>
   <body>
+    <header class="cabecalho">
+        <div class="titulo">
+          <h1> E-commerce</h1>
+        </div>
+        <nav class="nav">
+          <a href="{% url 'pages:index' %}">home</a>
+          <a href="{% url 'products:products' %}">produtos</a>
+          <a href="{% url 'pages:sobre' %}">sobre</a>
+          <a href="{% url 'pages:contato' %}">contato</a>
+        </nav>
+    </header>
     {% if request.user.is_authenticated %}
     <div class='row text-center'>
         <div class='col'>

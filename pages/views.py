@@ -15,7 +15,7 @@ def about_page(request):
         'title': 'Pagina sobre',
         'texto': 'Sobre'
     }
-    return render(request, 'aboute_page.html', context)
+    return render(request, 'about_page.html', context)
 
 
 def contact_page(request):

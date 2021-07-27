@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="text-center">
+        <h1>Nome: {{ product.title }}</h1>
+        <img style="width: 500px; height: 500px;" src="{{ product.image.url }}" alt="">
+        <p>Descrição: {{ product.description }}</p>
+        <p style="margin-bottom: 2rem;">Preço: R${{ product.price }}</p>
+    </div>
+    <br><br>
+    <p style="text-align: center;">Voltar a lista de <a href="{% url 'products:products' %}">Produtos </a></p>
+
+{% endblock content %}

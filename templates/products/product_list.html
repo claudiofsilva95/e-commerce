@@ -1,11 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% for produto in product_list %}
-    <div class="text-center">
-        <h1>Nome: {{ produto.title }}</h1>
-        <p>Descrição: {{ produto.description }}</p>
-        <p>Preço: R${{ produto.price }}</p>
+    <div class="div-maior">
+        <div class="div-list">
+            <ul>
+                <a href="{% url 'products:products' %}"> <li>Todos </li></a>
+                <a href="{% url 'products:destaques' %}"><li>Em destaque</li></a>
+            </ul>
+        </div>
     </div>
-    {% endfor %}
+
+    <div class="list-fotos">
+        {% for produto in product_list %}
+        <div class="div-grid">
+            <a href="{{ produto.get_absolute_url }}">
+                <h2>{{ produto.title }}</h2>
+
+            <img class="img-fluid" src="{{ produto.image.url }}" alt="">
+                <p style="margin-bottom: 2rem;">Preço: R${{ produto.price }}</p>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
 {% endblock content %}
