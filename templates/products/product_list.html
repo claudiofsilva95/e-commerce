@@ -5,7 +5,11 @@
         <div class="div-list">
             <ul>
                 <a href="{% url 'products:products' %}"> <li>Todos </li></a>
-                <a href="{% url 'products:destaques' %}"><li>Em destaque</li></a>
+                <a href="{% url 'products:destaques' %}"><li>Destaque</li></a>
+                {% for cat in categories %}
+                    <a href="{{ cat.get_absolute_url }}"><li>{{ cat.nome }}</li></a>
+                {% endfor %}
+                
             </ul>
         </div>
     </div>
@@ -13,12 +17,14 @@
     <div class="list-fotos">
         {% for produto in product_list %}
         <div class="div-grid">
+            <h2>{{ produto.title }}</h2>
             <a href="{{ produto.get_absolute_url }}">
-                <h2>{{ produto.title }}</h2>
-
             <img class="img-fluid" src="{{ produto.image.url }}" alt="">
-                <p style="margin-bottom: 2rem;">Preço: R${{ produto.price }}</p>
             </a>
+            <p>Preço: R${{ produto.description|truncatewords:5 }}</p>
+            <p style="margin-bottom: 2rem;">Preço: R${{ produto.price }}</p>
+            <a href="{{ produto.get_absolute_url }}" class="btn btn-success">Detalhe</a>
+            <a href="" class="btn btn-warning">Url produto</a>
         </div>
         {% endfor %}
     </div>

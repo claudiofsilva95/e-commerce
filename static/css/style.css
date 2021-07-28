@@ -1,26 +1,9 @@
-body {
-    padding: 0;
-    margin: 0;
-    background-color: #ccc;
-}
-
 h1, p {
     text-align: center;
 }
-a {
-    text-decoration: none;
-    font-size: 1.5rem;
-    color: blue;
-}
 a:hover {
     color: red;
-}
-
-.cabecalho {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin: 100px 20% 10px;
+    text-decoration: none;
 }
 
 .form {

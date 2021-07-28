@@ -23,7 +23,24 @@ class ProductManager(models.Manager):
         return self.get_queryset().featured()
 
 
-class Product(models.Model): #product_category
+class Category(models.Model):
+    nome = models.CharField(unique=True, max_length=255)
+    slug = AutoSlugField(unique=True, always_update=False, populate_from='nome')
+
+    class Meta:
+        ordering = ('nome', )
+        verbose_name = 'category'
+        verbose_name_plural = 'categories'
+    
+    def __str__(self):
+        return self.nome
+
+    def get_absolute_url(self):
+        return reverse('products:listar_por_categoria', kwargs={'slug': self.slug})
+
+
+class Product(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     title  = models.CharField(max_length=120, verbose_name='Título')
     description = models.TextField(verbose_name='Descrição')
     price = models.DecimalField(decimal_places=2, max_digits=20, default=100.00, verbose_name='Preço')

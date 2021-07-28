@@ -2,9 +2,11 @@
 
 {% block content %}
     <div class="text-center">
-        <h1>Nome: {{ product.title }}</h1>
-        <img style="width: 500px; height: 500px;" src="{{ product.image.url }}" alt="">
-        <p>Descrição: {{ product.description }}</p>
+        <h1> {{ product.title }}</h1>
+        {% if object.image %}
+            <img style="width: 500px; height: 500px;" src="{{ product.image.url }}" alt="">
+        {% endif %}
+        <p> {{ product.description|linebreaks }}</p>
         <p style="margin-bottom: 2rem;">Preço: R${{ product.price }}</p>
     </div>
     <br><br>
