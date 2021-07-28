@@ -1,9 +1,10 @@
 from django.views.generic import ListView
-from products.models import Product
+from products.models import Product, Category
 
 class SearchProductView(ListView):
-    template_name = "search/search.html"
+    template_name = "products/product_list.html"
     queryset = Product.objects.all()
+    category = None
     def get_queryset(self):
         request = self.request.GET['search']
         
@@ -13,8 +14,9 @@ class SearchProductView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        request = self.request.GET['search']
-        context['pesquisa'] = request
+        context['title'] = 'lista de produtos'
+        context["category"] = self.category
+        context["categories"] = Category.objects.all()
         return context
         
         
