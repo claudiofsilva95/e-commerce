@@ -25,7 +25,7 @@
             <a href="{{ produto.get_absolute_url }}">
             <img class="img-fluid" src="{{ produto.image.url }}" alt="">
             </a>
-            <p>Preço: R${{ produto.description|truncatewords:5 }}</p>
+            <p>{{ produto.description|truncatewords:5 }}</p>
             <p style="margin-bottom: 2rem;">Preço: R${{ produto.price }}</p>
             <a href="{{ produto.get_absolute_url }}" class="btn btn-success">Detalhe</a>
             

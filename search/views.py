@@ -3,7 +3,6 @@ from products.models import Product, Category
 
 class SearchProductView(ListView):
     template_name = "products/product_list.html"
-    queryset = Product.objects.all()
     category = None
     def get_queryset(self):
         request = self.request.GET['search']
