@@ -3,6 +3,7 @@ from .forms import ContactForm
 
 
 def homePage(request):
+    print(request.session.get('first_name', 'Unknow'))
     context = {
         'title': 'Pagina inicial',
         'texto': 'Inicial'

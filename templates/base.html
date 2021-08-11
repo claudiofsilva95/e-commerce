@@ -21,7 +21,7 @@
           {% if user.is_authenticated %}
           <a href="{% url 'pages:index' %}">home</a>
           <a href="{% url 'products:products' %}">produtos</a>
-          <a href="{% url 'pages:sobre' %}">sobre</a>
+          <a href="{% url 'carts:cart' %}">Carrinho</a>
           <a href="{% url 'pages:contato' %}">contato</a>
             <a href="{% url 'account_logout' %}">Sair</a>
           {% else %}
